@@ -1,0 +1,30 @@
+# Example descriptor for https://github.com/yxxbc/Bili-Summary
+# Not yet published upstream; values reflect the local installation.
+name: bili-summary
+display_name: B站视频总结
+description: Fetch Bilibili video info, official AI summary, subtitles, transcripts, danmaku and user videos over MCP.
+type: mcp
+version: 0.1.0
+license: UNLICENSED
+homepage: https://github.com/yxxbc/Bili-Summary
+topics:
+  - miyu-mcp
+  - miyu-package
+
+install:
+  method: git
+  runtime: python
+  setup:
+    - python3 -m venv .venv
+    - .venv/bin/pip install -r requirements.txt
+
+mcp:
+  id: bilibili-summary
+  command: "{root}/.venv/bin/python"
+  args:
+    - "-B"
+    - "{root}/bilibili_mcp.py"
+  env:
+    BILIBILI_SESSDATA: "{env:BILIBILI_SESSDATA}"
+    BILIBILI_COOKIE: "{env:BILIBILI_COOKIE}"
+  timeout_seconds: 60

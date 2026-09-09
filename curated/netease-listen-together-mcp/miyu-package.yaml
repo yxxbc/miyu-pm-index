@@ -1,0 +1,28 @@
+# Example descriptor for https://github.com/zbqbbm/netease-listen-together-mcp
+# Not yet published upstream; values reflect the local installation.
+name: netease-listen-together
+display_name: 网易云一起听
+description: Control NetEase Cloud Music and its native Listen Together room through an MCP server.
+type: mcp
+version: 0.1.0
+license: MIT
+homepage: https://github.com/zbqbbm/netease-listen-together-mcp
+topics:
+  - miyu-mcp
+  - miyu-package
+
+install:
+  method: git
+  runtime: python
+  setup: []
+
+mcp:
+  id: netease-music
+  command: python3
+  args:
+    - "-B"
+    - "{root}/server.py"
+  env:
+    NETEASE_COOKIE: "{user:NETEASE_COOKIE}"
+    NETEASE_LISTEN_TOGETHER_ACCEPTOR_ID: "{user:NETEASE_LISTEN_TOGETHER_ACCEPTOR_ID}"
+  timeout_seconds: 60

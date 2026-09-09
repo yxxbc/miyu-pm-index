@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "packages": [
+    {
+      "name": "bili-summary",
+      "repo": "yxxbc/Bili-Summary",
+      "manifest": "curated/bili-summary/miyu-package.yaml"
+    },
+    {
+      "name": "mi-fitness",
+      "repo": "binglua/mi-fitness-mcp-cn",
+      "manifest": "curated/mi-fitness-mcp/miyu-package.yaml"
+    },
+    {
+      "name": "netease-listen-together",
+      "repo": "zbqbbm/netease-listen-together-mcp",
+      "manifest": "curated/netease-listen-together-mcp/miyu-package.yaml"
+    },
+    {
+      "name": "open-watch-cinema",
+      "repo": "wynsyl1014/open-watch-cinema",
+      "manifest": "curated/open-watch-cinema/miyu-package.yaml"
+    }
+  ]
+}

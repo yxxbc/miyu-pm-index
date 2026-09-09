@@ -1,0 +1,25 @@
+# Example descriptor for https://github.com/wynsyl1014/open-watch-cinema
+# Not yet published upstream; values reflect the local installation.
+name: open-watch-cinema
+display_name: Open Watch Cinema
+description: Connect an AI to a local watch room for films with spoiler-gated MCP tick, window and frame tools.
+type: mcp
+version: 0.5.0
+license: MIT
+homepage: https://github.com/wynsyl1014/open-watch-cinema
+topics:
+  - miyu-mcp
+  - miyu-package
+
+install:
+  method: git
+  runtime: node
+  setup: []
+
+mcp:
+  id: cinema
+  command: node
+  args:
+    - "{root}/mcp/server.mjs"
+  env: {}
+  timeout_seconds: 60

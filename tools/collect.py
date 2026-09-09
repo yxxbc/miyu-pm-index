@@ -353,6 +353,68 @@ def discover_repos(token: Optional[str]) -> Dict[str, Dict[str, Any]]:
     return found
 
 
+def collect_curated(
+    schema: Dict[str, Any],
+    out: Path,
+    token: Optional[str],
+) -> Dict[str, Dict[str, Any]]:
+    """Load packages listed in curated.json (manually maintained allowlist)."""
+    curated_path = out / "curated.json"
+    entries: Dict[str, Dict[str, Any]] = {}
+    if not curated_path.exists():
+        return entries
+    try:
+        curated_data = json.loads(curated_path.read_text(encoding="utf-8"))
+    except Exception as exc:
+        print(f"warning: cannot read curated.json: {exc}", file=sys.stderr)
+        return entries
+
+    for item in curated_data.get("packages", []):
+        full_name = item.get("repo")
+        manifest_rel = item.get("manifest")
+        if not full_name or not manifest_rel:
+            continue
+        try:
+            manifest_path = out / manifest_rel
+            if not manifest_path.exists():
+                raise FileNotFoundError(f"curated manifest not found: {manifest_path}")
+            data = load_manifest(manifest_path)
+            json_schema_validate(data, schema)
+            default_branch = "main"
+            commit = None
+            archived = False
+            if token:
+                try:
+                    repo_info = github_json(
+                        f"https://api.github.com/repos/{full_name}",
+                        token,
+                    )
+                    default_branch = repo_info.get("default_branch") or "main"
+                    archived = bool(repo_info.get("archived"))
+                    commit_info = github_json(
+                        f"https://api.github.com/repos/{full_name}/commits/{default_branch}",
+                        token,
+                    )
+                    commit = commit_info.get("sha")
+                except Exception as exc:
+                    print(
+                        f"warning: cannot resolve curated repo {full_name}: {exc}",
+                        file=sys.stderr,
+                    )
+            entry = normalize_manifest(
+                data,
+                repo=f"https://github.com/{full_name}",
+                full_name=full_name,
+                default_branch=default_branch,
+                commit=commit,
+                archived=archived,
+            )
+            entries[entry["name"]] = entry
+        except Exception as exc:
+            print(f"curated {full_name} error: {exc}", file=sys.stderr)
+    return entries
+
+
 def collect_remote(
     schema: Dict[str, Any],
     out: Path,
@@ -406,6 +468,12 @@ def collect_remote(
             entries[name] = entry
         except Exception as exc:
             errors[full_name] = {"error": str(exc)}
+
+    curated = collect_curated(schema, out, token)
+    for name, entry in curated.items():
+        if name in entries:
+            print(f"curated package overrides auto-discovered {name}", file=sys.stderr)
+        entries[name] = entry
 
     for name, entry in entries.items():
         write_json(
