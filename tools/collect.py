@@ -177,6 +177,18 @@ def write_json(path: Path, payload: Any) -> None:
     )
 
 
+def clean_stale_package_files(out: Path, entries: Dict[str, Dict[str, Any]]) -> None:
+    """Remove packages/*.json files that are no longer present in the index."""
+    packages_dir = out / "packages"
+    if not packages_dir.exists():
+        return
+    valid = {f"{name}.json" for name in entries}
+    for path in sorted(packages_dir.glob("*.json")):
+        if path.name not in valid:
+            path.unlink()
+            print(f"removed stale package file {path.name}")
+
+
 def github_json(url: str, token: Optional[str], *, params: Optional[Dict[str, str]] = None) -> Dict[str, Any]:
     headers = {
         "Accept": "application/vnd.github+json",
@@ -308,6 +320,7 @@ def collect_remote(
             },
         )
 
+    clean_stale_package_files(out, entries)
     for repo_name, error in errors.items():
         write_json(out / "_errors" / f"{repo_name}.json", error)
     write_index(out, entries)
@@ -381,6 +394,7 @@ def collect_local(
             },
         )
 
+    clean_stale_package_files(out, entries)
     for repo_name, error in errors.items():
         write_json(out / "_errors" / f"{repo_name}.json", error)
     write_index(out, entries)
