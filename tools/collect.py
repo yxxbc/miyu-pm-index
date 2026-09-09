@@ -430,10 +430,17 @@ def collect_remote(
     for full_name, repo in repos.items():
         branch = repo.get("default_branch") or "main"
         manifest_url = (
-            f"https://raw.githubusercontent.com/{full_name}/{branch}/{MANIFEST_FILENAME}"
+            f"https://api.github.com/repos/{full_name}/contents/{MANIFEST_FILENAME}"
+            f"?ref={branch}"
         )
         try:
-            response = requests.get(manifest_url, timeout=30)
+            headers = {
+                "Accept": "application/vnd.github.raw",
+                "User-Agent": "miyu-pm-collector",
+            }
+            if token:
+                headers["Authorization"] = f"Bearer {token}"
+            response = requests.get(manifest_url, headers=headers, timeout=30)
             if response.status_code == 404:
                 continue  # name-prefix hit but no manifest: not a miyu package
             response.raise_for_status()
