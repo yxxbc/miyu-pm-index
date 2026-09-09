@@ -23,6 +23,18 @@ GitHub Actions 每天自动扫描仓库名以 **`miyu-pm`** 开头的 GitHub 仓
 
 ---
 
+## ⚡ 在线安装 miyu-pm
+
+如果还没安装 `miyu-pm`，一行命令即可安装：
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/yxxbc/miyu-pm/main/install.sh | sh
+```
+
+安装后 `miyu-pm` 默认会自动连接本仓库的线上索引，无需手动配置。
+
+---
+
 ## ✍️ 如何发布你的扩展
 
 ### 1. 仓库命名
