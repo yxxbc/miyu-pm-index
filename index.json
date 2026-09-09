@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-09T05:33:01Z",
-  "package_count": 2,
+  "generated_at": "2026-09-09T05:39:42Z",
+  "package_count": 1,
   "packages": [
     {
       "name": "miyu-pm",
@@ -14,7 +14,7 @@
       "repo": "https://github.com/yxxbc/miyu-pm",
       "manifest_path": "miyu-package.yaml",
       "default_branch": "main",
-      "commit": "d4246b3ae44787899131ccb8badf211c7b6a3eae",
+      "commit": "1607fc40edf7456bfb6a9a96b378d298bedce180",
       "archived": false,
       "security": {
         "trust": "community",
@@ -22,7 +22,7 @@
         "static_checks": {
           "status": "passed",
           "warnings": [],
-          "checked_at": "2026-09-09T05:33:01Z"
+          "checked_at": "2026-09-09T05:39:42Z"
         },
         "community_reports": {
           "total": 0,
@@ -35,45 +35,6 @@
         "method": "release",
         "runtime": "binary",
         "setup": []
-      }
-    },
-    {
-      "name": "miyu-pm-demo-hello",
-      "display_name": "Demo Hello",
-      "description": "Temporary demo script used to verify the miyu-pm end-to-end pipeline.",
-      "type": "script",
-      "version": "0.1.0",
-      "license": "MIT",
-      "homepage": "https://github.com/yxxbc/miyu-pm-demo-hello",
-      "repo": "https://github.com/yxxbc/miyu-pm-demo-hello",
-      "manifest_path": "miyu-package.yaml",
-      "default_branch": "main",
-      "commit": "08cb4ad47a7a2dffd044de855674807f539c4b47",
-      "archived": false,
-      "security": {
-        "trust": "community",
-        "reviewed_at": null,
-        "static_checks": {
-          "status": "passed",
-          "warnings": [],
-          "checked_at": "2026-09-09T05:33:01Z"
-        },
-        "community_reports": {
-          "total": 0,
-          "positive": 0,
-          "negative": 0,
-          "latest": null
-        }
-      },
-      "install": {
-        "method": "git",
-        "runtime": "python",
-        "setup": []
-      },
-      "script": {
-        "files": [
-          "hello.py"
-        ]
       }
     }
   ]
