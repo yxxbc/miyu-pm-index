@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-09T06:19:17Z",
+  "generated_at": "2026-09-09T06:20:21Z",
   "package_count": 5,
   "packages": [
     {
@@ -22,7 +22,7 @@
         "static_checks": {
           "status": "passed",
           "warnings": [],
-          "checked_at": "2026-09-09T06:19:15Z"
+          "checked_at": "2026-09-09T06:20:20Z"
         },
         "community_reports": {
           "total": 0,
@@ -72,7 +72,7 @@
         "static_checks": {
           "status": "passed",
           "warnings": [],
-          "checked_at": "2026-09-09T06:19:16Z"
+          "checked_at": "2026-09-09T06:20:20Z"
         },
         "community_reports": {
           "total": 0,
@@ -104,13 +104,13 @@
       "display_name": "miyu-pm",
       "description": "miyu third-party plugin / MCP package manager with CLI and fzf TUI.",
       "type": "app",
-      "version": "0.1.5",
+      "version": "0.1.6",
       "license": "MIT",
       "homepage": "https://github.com/yxxbc/miyu-pm",
       "repo": "https://github.com/yxxbc/miyu-pm",
       "manifest_path": "miyu-package.yaml",
       "default_branch": "main",
-      "commit": "6c854178ae6603c15da644a175365c4dee28b490",
+      "commit": "7c3fca616a6f7208ebe9c888ae696c6578a88a9e",
       "archived": false,
       "security": {
         "trust": "community",
@@ -118,7 +118,7 @@
         "static_checks": {
           "status": "passed",
           "warnings": [],
-          "checked_at": "2026-09-09T06:19:15Z"
+          "checked_at": "2026-09-09T06:20:19Z"
         },
         "community_reports": {
           "total": 0,
@@ -157,7 +157,7 @@
         "static_checks": {
           "status": "passed",
           "warnings": [],
-          "checked_at": "2026-09-09T06:19:17Z"
+          "checked_at": "2026-09-09T06:20:21Z"
         },
         "community_reports": {
           "total": 0,
@@ -204,7 +204,7 @@
         "static_checks": {
           "status": "passed",
           "warnings": [],
-          "checked_at": "2026-09-09T06:19:17Z"
+          "checked_at": "2026-09-09T06:20:21Z"
         },
         "community_reports": {
           "total": 0,
