@@ -4,7 +4,7 @@
   "source": {
     "repo": "https://github.com/yxxbc/miyu-pm",
     "default_branch": "main",
-    "commit": "7fe0e353a3a0e4824c5113e30f36b41f9b86bf09",
+    "commit": "0edef8ff14f3db1a1d11a45882722d1ee67f96ec",
     "manifest_path": "miyu-package.yaml"
   },
   "security": {
@@ -13,7 +13,7 @@
     "static_checks": {
       "status": "passed",
       "warnings": [],
-      "checked_at": "2026-09-09T06:03:37Z"
+      "checked_at": "2026-09-09T06:08:39Z"
     },
     "community_reports": {
       "total": 0,
@@ -27,7 +27,7 @@
     "display_name": "miyu-pm",
     "description": "miyu third-party plugin / MCP package manager with CLI and fzf TUI.",
     "type": "app",
-    "version": "0.1.3",
+    "version": "0.1.4",
     "license": "MIT",
     "homepage": "https://github.com/yxxbc/miyu-pm",
     "install": {
