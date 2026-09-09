@@ -4,7 +4,7 @@
   "source": {
     "repo": "https://github.com/yxxbc/miyu-pm",
     "default_branch": "main",
-    "commit": "c73d191c1ed9574b258a10669168bc749df54e54",
+    "commit": "6c854178ae6603c15da644a175365c4dee28b490",
     "manifest_path": "miyu-package.yaml"
   },
   "security": {
@@ -13,7 +13,7 @@
     "static_checks": {
       "status": "passed",
       "warnings": [],
-      "checked_at": "2026-09-09T06:15:45Z"
+      "checked_at": "2026-09-09T06:19:15Z"
     },
     "community_reports": {
       "total": 0,
