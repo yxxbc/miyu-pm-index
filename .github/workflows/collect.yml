@@ -1,0 +1,61 @@
+name: collect-registry
+
+on:
+  schedule:
+    # 每天 UTC 02:00 自动扫描
+    - cron: "0 2 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r tools/requirements.txt
+
+      - name: Collect and generate index
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: >-
+          python tools/collect.py
+          --schema schemas/miyu-package.schema.json
+          --out .
+
+      - name: Create or update auto PR
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if git diff --quiet; then
+            echo "no index changes"
+            exit 0
+          fi
+          git config user.name "miyu-pm bot"
+          git config user.email "miyu-pm[bot]@users.noreply.github.com"
+          BRANCH="miyu-pm-bot/collect"
+          git checkout -B "$BRANCH"
+          git add .
+          git commit -m "chore: refresh package index [skip ci]" || true
+          git push --force-with-lease -u origin "$BRANCH" || git push --force -u origin "$BRANCH"
+
+          PR_URL="$(gh pr list --head "$BRANCH" --json url -q '.[0].url' 2>/dev/null || true)"
+          if [ -n "$PR_URL" ]; then
+            echo "auto PR already exists: $PR_URL"
+          else
+            gh pr create \
+              --base main \
+              --head "$BRANCH" \
+              --title "chore: refresh package index [skip ci]" \
+              --body "自动收录结果，请审核后合并。扫描规则：仓库名以 miyu-pm 开头。每个候选必须通过 miyu-package.yaml Schema 校验。安全静态预检结果已写入包记录。"
+          fi
