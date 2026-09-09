@@ -88,6 +88,21 @@ miyu-pm search your-package
 miyu-pm install your-package
 ```
 
+### 没被收录 / PR 没合并怎么办？
+
+可以直接使用**自建源（tap 思路）**：
+
+1. Fork 本仓库，或新建一个自己的索引仓库；
+2. 按相同格式加入你要分发的包；
+3. 把 `index.json` 的 raw 地址给用户：
+
+```bash
+miyu-pm source add --name my-source \
+  https://raw.githubusercontent.com/<owner>/<repo>/main/index.json
+miyu-pm update
+miyu-pm install your-package
+```
+
 ---
 
 ## 🔒 安全模型

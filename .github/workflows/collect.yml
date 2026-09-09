@@ -32,6 +32,7 @@ jobs:
           python tools/collect.py
           --schema schemas/miyu-package.schema.json
           --out .
+          --summary-file "${RUNNER_TEMP}/pr-summary.json"
 
       - name: Create or update auto PR
         env:
@@ -49,13 +50,18 @@ jobs:
           git commit -m "chore: refresh package index [skip ci]" || true
           git push --force-with-lease -u origin "$BRANCH" || git push --force -u origin "$BRANCH"
 
+          SUMMARY="${RUNNER_TEMP}/pr-summary.json"
+          TITLE="$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["title"])' "$SUMMARY")"
+          BODY="$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["body"])' "$SUMMARY")"
+
           PR_URL="$(gh pr list --head "$BRANCH" --json url -q '.[0].url' 2>/dev/null || true)"
           if [ -n "$PR_URL" ]; then
             echo "auto PR already exists: $PR_URL"
+            gh pr edit "$PR_URL" --title "$TITLE" --body "$BODY"
           else
             gh pr create \
               --base main \
               --head "$BRANCH" \
-              --title "chore: refresh package index [skip ci]" \
-              --body "自动收录结果，请审核后合并。扫描规则：仓库名以 miyu-pm 开头。每个候选必须通过 miyu-package.yaml Schema 校验。安全静态预检结果已写入包记录。"
+              --title "$TITLE" \
+              --body "$BODY"
           fi
