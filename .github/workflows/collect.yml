@@ -59,9 +59,14 @@ jobs:
             echo "auto PR already exists: $PR_URL"
             gh pr edit "$PR_URL" --title "$TITLE" --body "$BODY"
           else
-            gh pr create \
+            PR_URL="$(gh pr create \
               --base main \
               --head "$BRANCH" \
               --title "$TITLE" \
-              --body "$BODY"
+              --body "$BODY")"
+          fi
+
+          if [ -n "$PR_URL" ]; then
+            gh pr merge "$PR_URL" --merge --delete-branch
+            echo "auto-merged: $PR_URL"
           fi
