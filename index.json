@@ -1,8 +1,104 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-09T05:55:50Z",
-  "package_count": 1,
+  "generated_at": "2026-09-09T06:03:39Z",
+  "package_count": 5,
   "packages": [
+    {
+      "name": "bili-summary",
+      "display_name": "B站视频总结",
+      "description": "Fetch Bilibili video info, official AI summary, subtitles, transcripts, danmaku and user videos over MCP.",
+      "type": "mcp",
+      "version": "0.1.0",
+      "license": "UNLICENSED",
+      "homepage": "https://github.com/yxxbc/Bili-Summary",
+      "repo": "https://github.com/yxxbc/Bili-Summary",
+      "manifest_path": "miyu-package.yaml",
+      "default_branch": "main",
+      "commit": "b10ffbe28416323e165752e6567ca5cf4e3249c1",
+      "archived": false,
+      "security": {
+        "trust": "community",
+        "reviewed_at": null,
+        "static_checks": {
+          "status": "passed",
+          "warnings": [],
+          "checked_at": "2026-09-09T06:03:38Z"
+        },
+        "community_reports": {
+          "total": 0,
+          "positive": 0,
+          "negative": 0,
+          "latest": null
+        }
+      },
+      "install": {
+        "method": "git",
+        "runtime": "python",
+        "setup": [
+          "python3 -m venv .venv",
+          ".venv/bin/pip install -r requirements.txt"
+        ]
+      },
+      "mcp": {
+        "id": "bilibili-summary",
+        "command": "{root}/.venv/bin/python",
+        "args": [
+          "-B",
+          "{root}/bilibili_mcp.py"
+        ],
+        "env": {
+          "BILIBILI_SESSDATA": "{env:BILIBILI_SESSDATA}",
+          "BILIBILI_COOKIE": "{env:BILIBILI_COOKIE}"
+        },
+        "timeout_seconds": 60
+      }
+    },
+    {
+      "name": "mi-fitness",
+      "display_name": "小米手环健康数据",
+      "description": "Read Xiaomi Mi Fitness health data through a local MCP server, including daily activity, heart rate, sleep, workouts and body measurements.",
+      "type": "mcp",
+      "version": "0.1.0",
+      "license": "MIT",
+      "homepage": "https://github.com/binglua/mi-fitness-mcp-cn",
+      "repo": "https://github.com/binglua/mi-fitness-mcp-cn",
+      "manifest_path": "miyu-package.yaml",
+      "default_branch": "main",
+      "commit": "7fcd06980f126c99c27e3a136b1ccb0f63dca8e5",
+      "archived": false,
+      "security": {
+        "trust": "community",
+        "reviewed_at": null,
+        "static_checks": {
+          "status": "passed",
+          "warnings": [],
+          "checked_at": "2026-09-09T06:03:38Z"
+        },
+        "community_reports": {
+          "total": 0,
+          "positive": 0,
+          "negative": 0,
+          "latest": null
+        }
+      },
+      "install": {
+        "method": "git",
+        "runtime": "python",
+        "setup": [
+          "python3 -m venv .venv",
+          ".venv/bin/pip install -e ."
+        ]
+      },
+      "mcp": {
+        "id": "mi-fitness",
+        "command": "{root}/.venv/bin/mi-fitness-mcp",
+        "args": [
+          "serve"
+        ],
+        "env": {},
+        "timeout_seconds": 60
+      }
+    },
     {
       "name": "miyu-pm",
       "display_name": "miyu-pm",
@@ -14,7 +110,7 @@
       "repo": "https://github.com/yxxbc/miyu-pm",
       "manifest_path": "miyu-package.yaml",
       "default_branch": "main",
-      "commit": "9c4487eb9c25ba031c558e480c2110070be260f5",
+      "commit": "7fe0e353a3a0e4824c5113e30f36b41f9b86bf09",
       "archived": false,
       "security": {
         "trust": "community",
@@ -22,7 +118,7 @@
         "static_checks": {
           "status": "passed",
           "warnings": [],
-          "checked_at": "2026-09-09T05:55:50Z"
+          "checked_at": "2026-09-09T06:03:37Z"
         },
         "community_reports": {
           "total": 0,
@@ -35,6 +131,96 @@
         "method": "release",
         "runtime": "binary",
         "setup": []
+      }
+    },
+    {
+      "name": "netease-listen-together",
+      "display_name": "网易云一起听",
+      "description": "Control NetEase Cloud Music and its native Listen Together room through an MCP server.",
+      "type": "mcp",
+      "version": "0.1.0",
+      "license": "MIT",
+      "homepage": "https://github.com/zbqbbm/netease-listen-together-mcp",
+      "repo": "https://github.com/zbqbbm/netease-listen-together-mcp",
+      "manifest_path": "miyu-package.yaml",
+      "default_branch": "main",
+      "commit": "224bc3d8f22a98717338769d0f7704055a0f85cc",
+      "archived": false,
+      "security": {
+        "trust": "community",
+        "reviewed_at": null,
+        "static_checks": {
+          "status": "passed",
+          "warnings": [],
+          "checked_at": "2026-09-09T06:03:39Z"
+        },
+        "community_reports": {
+          "total": 0,
+          "positive": 0,
+          "negative": 0,
+          "latest": null
+        }
+      },
+      "install": {
+        "method": "git",
+        "runtime": "python",
+        "setup": []
+      },
+      "mcp": {
+        "id": "netease-music",
+        "command": "python3",
+        "args": [
+          "-B",
+          "{root}/server.py"
+        ],
+        "env": {
+          "NETEASE_COOKIE": "{user:NETEASE_COOKIE}",
+          "NETEASE_LISTEN_TOGETHER_ACCEPTOR_ID": "{user:NETEASE_LISTEN_TOGETHER_ACCEPTOR_ID}"
+        },
+        "timeout_seconds": 60
+      }
+    },
+    {
+      "name": "open-watch-cinema",
+      "display_name": "Open Watch Cinema",
+      "description": "Connect an AI to a local watch room for films with spoiler-gated MCP tick, window and frame tools.",
+      "type": "mcp",
+      "version": "0.5.0",
+      "license": "MIT",
+      "homepage": "https://github.com/wynsyl1014/open-watch-cinema",
+      "repo": "https://github.com/wynsyl1014/open-watch-cinema",
+      "manifest_path": "miyu-package.yaml",
+      "default_branch": "main",
+      "commit": "6154eec6ef8f8d2a1831169b2f54952ccab71bea",
+      "archived": false,
+      "security": {
+        "trust": "community",
+        "reviewed_at": null,
+        "static_checks": {
+          "status": "passed",
+          "warnings": [],
+          "checked_at": "2026-09-09T06:03:39Z"
+        },
+        "community_reports": {
+          "total": 0,
+          "positive": 0,
+          "negative": 0,
+          "latest": null
+        }
+      },
+      "install": {
+        "method": "git",
+        "runtime": "node",
+        "setup": []
+      },
+      "mcp": {
+        "id": "cinema",
+        "command": "node",
+        "args": [
+          "{root}/mcp/server.mjs"
+        ],
+        "env": {},
+        "timeout_seconds": 60
       }
     }
   ]

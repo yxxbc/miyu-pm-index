@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "name": "bili-summary",
+  "source": {
+    "repo": "https://github.com/yxxbc/Bili-Summary",
+    "default_branch": "main",
+    "commit": "b10ffbe28416323e165752e6567ca5cf4e3249c1",
+    "manifest_path": "miyu-package.yaml"
+  },
+  "security": {
+    "trust": "community",
+    "reviewed_at": null,
+    "static_checks": {
+      "status": "passed",
+      "warnings": [],
+      "checked_at": "2026-09-09T06:03:38Z"
+    },
+    "community_reports": {
+      "total": 0,
+      "positive": 0,
+      "negative": 0,
+      "latest": null
+    }
+  },
+  "manifest": {
+    "name": "bili-summary",
+    "display_name": "B站视频总结",
+    "description": "Fetch Bilibili video info, official AI summary, subtitles, transcripts, danmaku and user videos over MCP.",
+    "type": "mcp",
+    "version": "0.1.0",
+    "license": "UNLICENSED",
+    "homepage": "https://github.com/yxxbc/Bili-Summary",
+    "install": {
+      "method": "git",
+      "runtime": "python",
+      "setup": [
+        "python3 -m venv .venv",
+        ".venv/bin/pip install -r requirements.txt"
+      ]
+    },
+    "mcp": {
+      "id": "bilibili-summary",
+      "command": "{root}/.venv/bin/python",
+      "args": [
+        "-B",
+        "{root}/bilibili_mcp.py"
+      ],
+      "env": {
+        "BILIBILI_SESSDATA": "{env:BILIBILI_SESSDATA}",
+        "BILIBILI_COOKIE": "{env:BILIBILI_COOKIE}"
+      },
+      "timeout_seconds": 60
+    }
+  }
+}

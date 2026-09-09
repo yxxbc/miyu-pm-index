@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "name": "netease-listen-together",
+  "source": {
+    "repo": "https://github.com/zbqbbm/netease-listen-together-mcp",
+    "default_branch": "main",
+    "commit": "224bc3d8f22a98717338769d0f7704055a0f85cc",
+    "manifest_path": "miyu-package.yaml"
+  },
+  "security": {
+    "trust": "community",
+    "reviewed_at": null,
+    "static_checks": {
+      "status": "passed",
+      "warnings": [],
+      "checked_at": "2026-09-09T06:03:39Z"
+    },
+    "community_reports": {
+      "total": 0,
+      "positive": 0,
+      "negative": 0,
+      "latest": null
+    }
+  },
+  "manifest": {
+    "name": "netease-listen-together",
+    "display_name": "网易云一起听",
+    "description": "Control NetEase Cloud Music and its native Listen Together room through an MCP server.",
+    "type": "mcp",
+    "version": "0.1.0",
+    "license": "MIT",
+    "homepage": "https://github.com/zbqbbm/netease-listen-together-mcp",
+    "install": {
+      "method": "git",
+      "runtime": "python",
+      "setup": []
+    },
+    "mcp": {
+      "id": "netease-music",
+      "command": "python3",
+      "args": [
+        "-B",
+        "{root}/server.py"
+      ],
+      "env": {
+        "NETEASE_COOKIE": "{user:NETEASE_COOKIE}",
+        "NETEASE_LISTEN_TOGETHER_ACCEPTOR_ID": "{user:NETEASE_LISTEN_TOGETHER_ACCEPTOR_ID}"
+      },
+      "timeout_seconds": 60
+    }
+  }
+}
