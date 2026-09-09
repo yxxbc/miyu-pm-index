@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "name": "mi-fitness",
+  "source": {
+    "repo": "https://github.com/binglua/mi-fitness-mcp-cn",
+    "default_branch": "main",
+    "commit": "7fcd06980f126c99c27e3a136b1ccb0f63dca8e5",
+    "manifest_path": "miyu-package.yaml"
+  },
+  "security": {
+    "trust": "community",
+    "reviewed_at": null,
+    "static_checks": {
+      "status": "passed",
+      "warnings": [],
+      "checked_at": "2026-09-09T06:03:38Z"
+    },
+    "community_reports": {
+      "total": 0,
+      "positive": 0,
+      "negative": 0,
+      "latest": null
+    }
+  },
+  "manifest": {
+    "name": "mi-fitness",
+    "display_name": "小米手环健康数据",
+    "description": "Read Xiaomi Mi Fitness health data through a local MCP server, including daily activity, heart rate, sleep, workouts and body measurements.",
+    "type": "mcp",
+    "version": "0.1.0",
+    "license": "MIT",
+    "homepage": "https://github.com/binglua/mi-fitness-mcp-cn",
+    "install": {
+      "method": "git",
+      "runtime": "python",
+      "setup": [
+        "python3 -m venv .venv",
+        ".venv/bin/pip install -e ."
+      ]
+    },
+    "mcp": {
+      "id": "mi-fitness",
+      "command": "{root}/.venv/bin/mi-fitness-mcp",
+      "args": [
+        "serve"
+      ],
+      "env": {},
+      "timeout_seconds": 60
+    }
+  }
+}

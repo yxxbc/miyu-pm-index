@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "name": "open-watch-cinema",
+  "source": {
+    "repo": "https://github.com/wynsyl1014/open-watch-cinema",
+    "default_branch": "main",
+    "commit": "6154eec6ef8f8d2a1831169b2f54952ccab71bea",
+    "manifest_path": "miyu-package.yaml"
+  },
+  "security": {
+    "trust": "community",
+    "reviewed_at": null,
+    "static_checks": {
+      "status": "passed",
+      "warnings": [],
+      "checked_at": "2026-09-09T06:03:39Z"
+    },
+    "community_reports": {
+      "total": 0,
+      "positive": 0,
+      "negative": 0,
+      "latest": null
+    }
+  },
+  "manifest": {
+    "name": "open-watch-cinema",
+    "display_name": "Open Watch Cinema",
+    "description": "Connect an AI to a local watch room for films with spoiler-gated MCP tick, window and frame tools.",
+    "type": "mcp",
+    "version": "0.5.0",
+    "license": "MIT",
+    "homepage": "https://github.com/wynsyl1014/open-watch-cinema",
+    "install": {
+      "method": "git",
+      "runtime": "node",
+      "setup": []
+    },
+    "mcp": {
+      "id": "cinema",
+      "command": "node",
+      "args": [
+        "{root}/mcp/server.mjs"
+      ],
+      "env": {},
+      "timeout_seconds": 60
+    }
+  }
+}
