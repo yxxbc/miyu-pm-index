@@ -21,6 +21,11 @@ GitHub Actions 每天自动扫描仓库名以 **`miyu-pm`** 开头的 GitHub 仓
 
 `miyu-pm` 用户通过本仓库的 `index.json` 搜索和安装扩展。
 
+## 📖 文档
+
+- [📖 插件作者指南](PACKAGE_AUTHOR_GUIDE.md)
+- [📦 可用包聚合列表](PACKAGES.md)（自动生成，方便人看）
+
 ---
 
 ## ⚡ 在线安装 miyu-pm
