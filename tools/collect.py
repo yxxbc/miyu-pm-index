@@ -163,7 +163,7 @@ def normalize_manifest(
             },
         },
     }
-    for section in ("install", "mcp", "skill", "script", "plugin"):
+    for section in ("install", "mcp", "skill", "script", "plugin", "release"):
         if section in data:
             entry[section] = data[section]
     return entry
@@ -503,6 +503,7 @@ def collect_remote(
                         "skill",
                         "script",
                         "plugin",
+                        "release",
                     )
                     if key in entry
                 },
@@ -580,6 +581,7 @@ def collect_local(
                         "skill",
                         "script",
                         "plugin",
+                        "release",
                     )
                     if key in entry
                 },
