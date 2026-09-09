@@ -6,7 +6,7 @@
 |---|---|---|---|---|
 | `bili-summary` | mcp | 0.1.0 | https://github.com/yxxbc/Bili-Summary | Fetch Bilibili video info, official AI summary, subtitles, transcripts, danmaku and user videos over MCP. |
 | `mi-fitness` | mcp | 0.1.0 | https://github.com/binglua/mi-fitness-mcp-cn | Read Xiaomi Mi Fitness health data through a local MCP server, including daily activity, heart rate, sleep, workouts and body measurements. |
-| `miyu-pm` | app | 0.1.4 | https://github.com/yxxbc/miyu-pm | miyu third-party plugin / MCP package manager with CLI and fzf TUI. |
+| `miyu-pm` | app | 0.1.5 | https://github.com/yxxbc/miyu-pm | miyu third-party plugin / MCP package manager with CLI and fzf TUI. |
 | `netease-listen-together` | mcp | 0.1.0 | https://github.com/zbqbbm/netease-listen-together-mcp | Control NetEase Cloud Music and its native Listen Together room through an MCP server. |
 | `open-watch-cinema` | mcp | 0.5.0 | https://github.com/wynsyl1014/open-watch-cinema | Connect an AI to a local watch room for films with spoiler-gated MCP tick, window and frame tools. |
 
