@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-09T06:34:17Z",
+  "generated_at": "2026-09-10T06:55:58Z",
   "package_count": 5,
   "packages": [
     {
@@ -22,7 +22,7 @@
         "static_checks": {
           "status": "passed",
           "warnings": [],
-          "checked_at": "2026-09-09T06:34:16Z"
+          "checked_at": "2026-09-10T06:55:56Z"
         },
         "community_reports": {
           "total": 0,
@@ -72,7 +72,7 @@
         "static_checks": {
           "status": "passed",
           "warnings": [],
-          "checked_at": "2026-09-09T06:34:16Z"
+          "checked_at": "2026-09-10T06:55:57Z"
         },
         "community_reports": {
           "total": 0,
@@ -110,7 +110,7 @@
       "repo": "https://github.com/yxxbc/miyu-pm",
       "manifest_path": "miyu-package.yaml",
       "default_branch": "main",
-      "commit": "2e973cc382c35e340c73bf717dd2057989e244ad",
+      "commit": "4299b5808102d1f16d800222ee5dea38c16b099c",
       "archived": false,
       "security": {
         "trust": "community",
@@ -118,7 +118,7 @@
         "static_checks": {
           "status": "passed",
           "warnings": [],
-          "checked_at": "2026-09-09T06:34:15Z"
+          "checked_at": "2026-09-10T06:55:55Z"
         },
         "community_reports": {
           "total": 0,
@@ -157,7 +157,7 @@
         "static_checks": {
           "status": "passed",
           "warnings": [],
-          "checked_at": "2026-09-09T06:34:17Z"
+          "checked_at": "2026-09-10T06:55:57Z"
         },
         "community_reports": {
           "total": 0,
@@ -204,7 +204,7 @@
         "static_checks": {
           "status": "passed",
           "warnings": [],
-          "checked_at": "2026-09-09T06:34:17Z"
+          "checked_at": "2026-09-10T06:55:58Z"
         },
         "community_reports": {
           "total": 0,
