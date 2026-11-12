@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-11T08:45:12Z",
+  "generated_at": "2026-11-12T09:08:00Z",
   "package_count": 5,
   "packages": [
     {
@@ -22,7 +22,7 @@
         "static_checks": {
           "status": "passed",
           "warnings": [],
-          "checked_at": "2026-11-11T08:45:10Z"
+          "checked_at": "2026-11-12T09:07:57Z"
         },
         "community_reports": {
           "total": 0,
@@ -72,7 +72,7 @@
         "static_checks": {
           "status": "passed",
           "warnings": [],
-          "checked_at": "2026-11-11T08:45:11Z"
+          "checked_at": "2026-11-12T09:07:58Z"
         },
         "community_reports": {
           "total": 0,
@@ -118,7 +118,7 @@
         "static_checks": {
           "status": "passed",
           "warnings": [],
-          "checked_at": "2026-11-11T08:45:09Z"
+          "checked_at": "2026-11-12T09:07:55Z"
         },
         "community_reports": {
           "total": 0,
@@ -157,7 +157,7 @@
         "static_checks": {
           "status": "passed",
           "warnings": [],
-          "checked_at": "2026-11-11T08:45:12Z"
+          "checked_at": "2026-11-12T09:07:59Z"
         },
         "community_reports": {
           "total": 0,
@@ -204,7 +204,7 @@
         "static_checks": {
           "status": "passed",
           "warnings": [],
-          "checked_at": "2026-11-11T08:45:12Z"
+          "checked_at": "2026-11-12T09:08:00Z"
         },
         "community_reports": {
           "total": 0,
