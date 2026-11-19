@@ -4,7 +4,7 @@
   "source": {
     "repo": "https://github.com/binglua/mi-fitness-mcp-cn",
     "default_branch": "main",
-    "commit": "7fcd06980f126c99c27e3a136b1ccb0f63dca8e5",
+    "commit": "f256625c136a60ef64c04d902b3a5a99ca6bb527",
     "manifest_path": "miyu-package.yaml"
   },
   "security": {
@@ -13,7 +13,7 @@
     "static_checks": {
       "status": "passed",
       "warnings": [],
-      "checked_at": "2026-11-18T09:39:00Z"
+      "checked_at": "2026-11-19T09:45:18Z"
     },
     "community_reports": {
       "total": 0,
