@@ -4,7 +4,7 @@
   "source": {
     "repo": "https://github.com/wynsyl1014/open-watch-cinema",
     "default_branch": "main",
-    "commit": "6154eec6ef8f8d2a1831169b2f54952ccab71bea",
+    "commit": "1dace2411b63c52cb56bfd927fd72f637e895eca",
     "manifest_path": "miyu-package.yaml"
   },
   "security": {
@@ -13,7 +13,7 @@
     "static_checks": {
       "status": "passed",
       "warnings": [],
-      "checked_at": "2026-11-24T11:55:50Z"
+      "checked_at": "2026-11-25T10:47:28Z"
     },
     "community_reports": {
       "total": 0,

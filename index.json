@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-24T11:55:50Z",
+  "generated_at": "2026-11-25T10:47:28Z",
   "package_count": 5,
   "packages": [
     {
@@ -22,7 +22,7 @@
         "static_checks": {
           "status": "passed",
           "warnings": [],
-          "checked_at": "2026-11-24T11:55:48Z"
+          "checked_at": "2026-11-25T10:47:26Z"
         },
         "community_reports": {
           "total": 0,
@@ -72,7 +72,7 @@
         "static_checks": {
           "status": "passed",
           "warnings": [],
-          "checked_at": "2026-11-24T11:55:48Z"
+          "checked_at": "2026-11-25T10:47:26Z"
         },
         "community_reports": {
           "total": 0,
@@ -118,7 +118,7 @@
         "static_checks": {
           "status": "passed",
           "warnings": [],
-          "checked_at": "2026-11-24T11:55:46Z"
+          "checked_at": "2026-11-25T10:47:24Z"
         },
         "community_reports": {
           "total": 0,
@@ -157,7 +157,7 @@
         "static_checks": {
           "status": "passed",
           "warnings": [],
-          "checked_at": "2026-11-24T11:55:49Z"
+          "checked_at": "2026-11-25T10:47:27Z"
         },
         "community_reports": {
           "total": 0,
@@ -196,7 +196,7 @@
       "repo": "https://github.com/wynsyl1014/open-watch-cinema",
       "manifest_path": "miyu-package.yaml",
       "default_branch": "main",
-      "commit": "6154eec6ef8f8d2a1831169b2f54952ccab71bea",
+      "commit": "1dace2411b63c52cb56bfd927fd72f637e895eca",
       "archived": false,
       "security": {
         "trust": "community",
@@ -204,7 +204,7 @@
         "static_checks": {
           "status": "passed",
           "warnings": [],
-          "checked_at": "2026-11-24T11:55:50Z"
+          "checked_at": "2026-11-25T10:47:28Z"
         },
         "community_reports": {
           "total": 0,
